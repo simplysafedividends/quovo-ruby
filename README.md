@@ -1,5 +1,12 @@
 # Ruby wrapper for Quovo's v3 API (WIP)
 
+## Requirements
+### ruby 2.5.1
+Developed/tested on 2.5.1, will probably work on anything above 2.0.
+
+### redis
+Needed for caching the JWT token.
+
 ## Installation
 
 Add this line to your application's Gemfile:

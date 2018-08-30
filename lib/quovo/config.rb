@@ -1,8 +1,9 @@
 require 'ostruct'
+require 'redis'
 
 module Quovo
   module Config
-    KEYS = %i(redis_url username password).freeze
+    KEYS = %i(redis_url redis username password verbose max_retries).freeze
 
     attr_writer(*KEYS)
 
