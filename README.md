@@ -2,30 +2,75 @@
 
 ## Requirements
 ### ruby 2.5.1
-Developed/tested on 2.5.1, will probably work on anything above 2.0.
+Developed on 2.5.1, will probably work on anything 2.3 and above.
 
 ### redis
-Needed for caching the API JWT token.
+Needed for caching the API's JWT.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
 ```ruby
 gem 'quovo-ruby'
 ```
 
-And then execute:
-
-    $ bundle
+Run:
+```
+bundle
+```
 
 Or install it yourself as:
+```
+gem install quovo-ruby
+```
+    
+Go to wherever your initializers reside and create `quovo.rb`:
+```ruby
+require 'quovo-ruby'
 
-    $ gem install quovo-ruby
+Quovo.configure do |config|
+  # Quovo API dashboard credentials
+  config.username = ''
+  config.password = ''
+  
+  # Outputs verbose HTTParty logging to stdout
+  c.verbose = true
+  
+  # redis url for storing JWT
+  c.redis_url = 'redis://localhost:6379'
+end
+````
 
 ## Usage
+### Users
+```ruby
+Quovo.users.all
+=> #<OpenStruct body=#<OpenStruct users=[{...}, {...}]>, headers={ ... }, status_code=200, success?=true>
 
-TODO: Write usage instructions here
+Quovo.users.create(username: 'test_username', name: 'John Doe', email: 'test@example.com')
+Quovo.users.find(1)
+Quovo.users.destroy(1)
+Quovo.users.update(1, email: 'new_email@example.com' name: 'John Smith')
+```
+### Accounts
+```ruby
+Quovo.accounts.all
+Quovo.accounts.find(1)
+Quovo.accounts
+Quovo.accounts.for_user(2)
+Quovo.accounts.for_connection(3)
+Quovo.accounts.update(1, {???})
+```
+
+## Working Endpoints
+* `/accounts`
+* `/connections`
+* `/transactions`
+* `/users`
+
+Above endpoints still need fixture tests. Endpoints used in Quovo's Connect UI widget (`/auth`, `/challenges`, etc.) 
+may not come any time soon, so if you want them, fork and open up a PR for them.
 
 ## Development
 
@@ -36,8 +81,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/studentloanbenefits/quovo-ruby.
-
-## Inspirations
 
 ## License
 
