@@ -9,7 +9,11 @@ require 'awesome_print'
 require 'quovo/base'
 require 'quovo/config'
 require 'quovo/version'
+
 require 'quovo/resources/base'
+require 'quovo/resources/account'
+require 'quovo/resources/connection'
+require 'quovo/resources/transaction'
 require 'quovo/resources/user'
 
 module Quovo
@@ -19,6 +23,18 @@ module Quovo
   class TokenRefreshError < StandardError; end
 
   class << self
+    def accounts
+      Quovo::Resources::Account
+    end
+
+    def connections
+      Quovo::Resources::Connection
+    end
+
+    def transactions
+      Quovo::Resources::Transaction
+    end
+
     def users
       Quovo::Resources::User
     end
