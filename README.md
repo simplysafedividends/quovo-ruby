@@ -5,7 +5,7 @@
 Developed/tested on 2.5.1, will probably work on anything above 2.0.
 
 ### redis
-Needed for caching the JWT token.
+Needed for caching the API JWT token.
 
 ## Installation
 

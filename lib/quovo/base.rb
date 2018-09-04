@@ -36,14 +36,22 @@ module Quovo
       def fetch(method, path, options = {})
         request_options = { headers: get_auth_header(path) }
         request_options[:body] = options[:body].to_json if options.key?(:body)
+        request_options[:headers]['Content-Type'] = 'application/json' if request_options.key?(:body)
         request_options[:debug_output] = $stdout if Quovo.config.verbose
 
         response = send(method, path, request_options)
 
         raise Quovo::ApiError, response.body if !response.success?
 
+        body =
+          if response.body.blank?
+            response.body
+          else
+            OpenStruct.new(JSON.parse(response.body.to_s, symbolize_names: true))
+          end
+
         OpenStruct.new(
-          body: OpenStruct.new(JSON.parse(response.body.to_s, symbolize_names: true)),
+          body: body,
           headers: response.headers,
           status_code: response.code,
           success?: response.success?
