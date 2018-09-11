@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=533ca6c93b9109a973cadef2b2ce80f9
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 20:31:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '210'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=E01UpGm/LojbcqZeHxNYZRV4coEmuRTXd5Vmj1picXfwM8rGNaLAlYHcHQJMgadA9sDhoNLM5z4e8yTSK2FKpKFdsMO638R4pfNDAeDWIJdf26nBs6tTMlb7WAoD;
+        Expires=Tue, 18 Sep 2018 20:31:04 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+    body:
+      encoding: UTF-8
+      string: '{"access_token": {"token": "token",
+        "expires": "2018-09-11T21:31:06Z", "name": "533ca6c93b9109a973cadef2b2ce80f9",
+        "created": "2018-09-11T20:31:06Z"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 20:31:06 GMT
+- request:
+    method: put
+    uri: https://api.quovo.com/v3/transactions/1
+    body:
+      encoding: UTF-8
+      string: '{"cashflow_category":"Education"}'
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer token
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 20:31:16 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '468'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=1q6lB0lp/gIxlh/x4Qd9C6aE+Y55rwdcSL/BEJzTYnzw1+RTnI9Z7husCRtOpQ3J30mxZA5Q9ZwPrqDKV1ZVUjyzKt9MhEJDyxlKb6f343DCiPa/OSyIHp41cqRY;
+        Expires=Tue, 18 Sep 2018 20:31:06 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Ratelimit-Limit:
+      - '10000'
+      Ratelimit-Remaining:
+      - '9998'
+      Ratelimit-Reset:
+      - '1536701303'
+    body:
+      encoding: UTF-8
+      string: '{"transaction": {"forex_rate": 1.0, "price": 0.0, "currency": null,
+        "fees": 0.0, "id": 1, "cashflow_subcategory": "Other Education",
+        "user_id": 1, "cashflow_category": "Education", "type": "C", "memo":
+        "DEBIT", "account_id": 1, "symbol": null, "connection_id": 1, "date": "2018-09-07",
+        "symbol_name": null, "value": -12.5, "subtype": "WITH", "is_cancel": false,
+        "quantity": 0.0}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 20:31:16 GMT
+recorded_with: VCR 4.0.0

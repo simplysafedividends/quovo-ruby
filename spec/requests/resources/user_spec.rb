@@ -52,7 +52,7 @@ describe 'Quovo::Resources::User', :vcr do
   end
 
   describe '.find' do
-    it 'returns a user' do
+    it 'returns the user' do
       response = Quovo.users.find(1)
 
       expect(response.status_code).to eql(200)
@@ -63,7 +63,7 @@ describe 'Quovo::Resources::User', :vcr do
   describe '.update' do
     let(:new_name) { 'New Name' }
 
-    it "updates a user's name" do
+    it "updates the user's name" do
       response = Quovo.users.update(1, name: new_name)
 
       expect(response.body.user[:name]).to eql(new_name)

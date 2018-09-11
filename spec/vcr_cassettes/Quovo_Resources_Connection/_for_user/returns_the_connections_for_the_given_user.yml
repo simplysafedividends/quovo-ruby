@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=65f90e7ef310747dee9a5b9f626acc38
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 17:32:19 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '210'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=rxXlawzEcWLrS9SbB2kFce2TMyTWVyGAQDgWXnApxBiHTF+u8LqvzlW9ZuUVxwdCrOR8l6F7+cmLWdZsxGfJEPgoWioZ8bBmwLJguUmuDUkWE279RLxoeNmhSpjr;
+        Expires=Tue, 18 Sep 2018 17:32:17 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+    body:
+      encoding: UTF-8
+      string: '{"access_token": {"token": "token",
+        "expires": "2018-09-11T18:32:19Z", "name": "65f90e7ef310747dee9a5b9f626acc38",
+        "created": "2018-09-11T17:32:19Z"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 17:32:19 GMT
+- request:
+    method: get
+    uri: https://api.quovo.com/v3/users/1/connections
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 17:32:20 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '388'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=N6k1AK2p0pMIkr/Q7Y6xx5q+PJi8EdZcVxMO5PvSghTclT6f9RLWehyC1TIhYrWPHZKVCcyJS4acRvhXW5N51YoR23h0PssZ8PZh69HWRHlsYabqk7rPwOveetIW;
+        Expires=Tue, 18 Sep 2018 17:32:20 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Ratelimit-Limit:
+      - '10000'
+      Ratelimit-Remaining:
+      - '9996'
+      Ratelimit-Reset:
+      - '1536690421'
+    body:
+      encoding: UTF-8
+      string: '{"connections": [{"username": "test@example.com", "status":
+        "good", "user_id": 1, "created": "2018-08-27T17:38:07Z", "last_good_sync":
+        "2018-09-08T20:24:44Z", "is_disabled": false, "institution_name": "FedLoan
+        Servicing", "value": -370.54, "last_sync": "2018-09-08T20:24:44Z", "institution_id":
+        1, "auto_updates": true, "config_instructions": null, "id": 1}]}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 17:32:20 GMT
+recorded_with: VCR 4.0.0

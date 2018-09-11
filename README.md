@@ -3,13 +3,13 @@
 ## Progress
 * `/accounts`
   - Works? Yes
-  - Tests? No
+  - Tests? Yes
 * `/connections`
   - Works? Yes
-  - Tests? No
+  - Tests? Yes
 * `/transactions`
   - Works? Yes
-  - Tests? No
+  - Tests? Yes
 * `/users`
   - Works? Yes
   - Tests? Yes

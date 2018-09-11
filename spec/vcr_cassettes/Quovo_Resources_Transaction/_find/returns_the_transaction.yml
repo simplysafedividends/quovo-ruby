@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=22030269b7a2f36622c64d797f7fb616
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 18:03:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '210'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=uShSkQywI5WZoGPyP8tJCNMwzcOn3q6aSM/7siBR97wbOYrwS/jrn/JCal9xuX5P3/s+Li3VNzSFXjC6HW3o8IKOafQp4SvuCUSZnvfBQOxrEk+DCE2k39hJU0O/;
+        Expires=Tue, 18 Sep 2018 18:02:58 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+    body:
+      encoding: UTF-8
+      string: '{"access_token": {"token": "token",
+        "expires": "2018-09-11T19:03:00Z", "name": "22030269b7a2f36622c64d797f7fb616",
+        "created": "2018-09-11T18:03:01Z"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 18:03:00 GMT
+- request:
+    method: get
+    uri: https://api.quovo.com/v3/transactions/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 18:03:05 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '455'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=wvgC9KDXLo4TJ4Zh/4fxPMcxYrBaONCVZWaUgZzoE5b3Nhi0vghurwvoIyj0BL0c1UNoYMQej0qZaiJX+fVDf1j7qReFW1ieeo/gn7yNLy+GQFR5NZ/BexKJH+us;
+        Expires=Tue, 18 Sep 2018 18:03:01 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Ratelimit-Limit:
+      - '10000'
+      Ratelimit-Remaining:
+      - '9988'
+      Ratelimit-Reset:
+      - '1536690421'
+    body:
+      encoding: UTF-8
+      string: '{"transaction": {"forex_rate": 1.0, "price": 0.0, "currency": null,
+        "fees": 0.0, "id": 1, "cashflow_subcategory": "Uncategorized", "user_id":
+        1, "cashflow_category": "Uncategorized", "type": "C", "memo": "DEBIT", "account_id": 1, "symbol":
+        null, "connection_id": 1, "date": "2018-05-01", "symbol_name": null,
+        "value": -10.45, "subtype": "WITH", "is_cancel": false, "quantity": 0.0}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 18:03:06 GMT
+recorded_with: VCR 4.0.0

@@ -2,7 +2,7 @@ module Quovo
   module Resources
     class Transaction < Base
       class << self
-        #
+        # Fetches the given transaction.
         #
         #
         def find(id)
@@ -30,8 +30,12 @@ module Quovo
           request(:get, "/connections/#{connection_id}/transactions")
         end
 
-        # TODO
-        def update(id)
+        #
+        #
+        #
+        #
+        def update(id, params = {})
+          request(:put, "/transactions/#{id}", body: params)
         end
       end
     end

@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=debe990531d254bd841e49e6289678d1
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 15:52:18 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '210'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=rHSvijddZ2KSI9R1/Cj0FgN6yd5Gdh2akPdaorO2aMZsNcSot3QRMf5JtikLNgCnbGf+LrjEb9YpdON3/5NWQ2GxE+178N5PXLGoFlA6xSfEybXbbEOsRWWJ8BQp;
+        Expires=Tue, 18 Sep 2018 15:52:17 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+    body:
+      encoding: UTF-8
+      string: '{"access_token": {"token": "token",
+        "expires": "2018-09-11T16:52:18Z", "name": "debe990531d254bd841e49e6289678d1",
+        "created": "2018-09-11T15:52:21Z"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 15:52:18 GMT
+- request:
+    method: get
+    uri: https://api.quovo.com/v3/accounts/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 15:52:21 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '425'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=4aXgnCCSUvfwLiSdqOes/iqHUtGVMrohl5aSczb97wGl/CQH4O6Ena7/LrnzR4Bm5mIyFre038KatngFq0CgNHoPOoZB0zvXEii/rpYEJVzmYC4/kYK1kLn6CKdY;
+        Expires=Tue, 18 Sep 2018 15:52:18 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Ratelimit-Limit:
+      - '10000'
+      Ratelimit-Remaining:
+      - '9994'
+      Ratelimit-Reset:
+      - '1536681745'
+    body:
+      encoding: UTF-8
+      string: '{"account": {"username": "test@example.com", "category":
+        "Banking", "user_id": 1, "name": "***1111", "is_disabled": false, "type":
+        "Credit Card", "institution_name": "Wells Fargo", "connection_id": 1,
+        "is_taxable": true, "institution_id": 1, "type_confidence": "Very High",
+        "value": -15.0, "owner_type": "Individual Account", "nickname": "Bank", "id": 1}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 15:52:21 GMT
+recorded_with: VCR 4.0.0

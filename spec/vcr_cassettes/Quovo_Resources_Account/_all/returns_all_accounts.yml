@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=cabcaa12f39a376f43722f5bf236c189
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 15:43:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '210'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=SIyvBdLTi0E/A1M7SQvJVRuEpfxDKlBUS5s7W/k45awhfHs9GKx2tw08qK1ORotUqimTAcOdiLAIBfF50YAs+OSSPf49gFU9JTl02aV1/hXq1flWEonWLHCjviDz;
+        Expires=Tue, 18 Sep 2018 15:43:44 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+    body:
+      encoding: UTF-8
+      string: '{"access_token": {"token": "token",
+        "expires": "2018-09-11T16:43:47Z", "name": "cabcaa12f39a376f43722f5bf236c189",
+        "created": "2018-09-11T15:43:50Z"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 15:43:47 GMT
+- request:
+    method: get
+    uri: https://api.quovo.com/v3/accounts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 15:43:54 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '6063'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=WN+rEdluZ7sc4Lvs6z7zE4VzOrCm0/mwQl4D3kJVRrQl6T3qWEDSN97zViTqMipdIeEz7qtRxvBJfIcGxatLBMYHwyMIpKFvYNV7VpryLBmnTSlcsJvwHCAcCTij;
+        Expires=Tue, 18 Sep 2018 15:43:48 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Ratelimit-Limit:
+      - '10000'
+      Ratelimit-Remaining:
+      - '9997'
+      Ratelimit-Reset:
+      - '1536681745'
+    body:
+      encoding: UTF-8
+      string: '{"accounts": [{"username": "test@example.com", "category":
+        "Loan", "user_id": 1, "name": "***1", "is_disabled": false, "type":
+        "Student Loan", "institution_name": "Mohela - SoFi", "connection_id": 1,
+        "is_taxable": false, "institution_id": 1, "type_confidence": "Very High",
+        "value": -13164.79, "owner_type": "Individual Account", "nickname": "SoFi-Refi", "id": 1},
+         {"username": "test2@example.com",
+        "category": "Loan", "user_id": 1, "name": "***3333", "is_disabled":
+        false, "type": "Student Loan", "institution_name": "Student Loan", "connection_id":
+        1, "is_taxable": false, "institution_id": 1, "type_confidence": "Very
+        High", "value": -5577.61, "owner_type": "Individual Account", "nickname":
+        "no", "id": 1}]}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 15:43:54 GMT
+recorded_with: VCR 4.0.0

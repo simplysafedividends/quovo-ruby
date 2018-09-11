@@ -1,16 +1,12 @@
 require 'bundler/setup'
-require 'quovo-ruby'
-
 require 'fakeredis/rspec'
 require 'vcr'
+
+require 'quovo-ruby'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = '.rspec_status'
-
-  # Disable RSpec exposing methods globally on `Module` and `main`
-  # config.disable_monkey_patching!
-
   config.expect_with(:rspec) { |c| c.syntax = :expect }
 
   config.before(:all) do
@@ -20,7 +16,6 @@ RSpec.configure do |config|
       c.password = ''
 
       # redis_url doesn't really matter as fakeredis will take over and use an in-memory store
-      # c.redis_url = 'redis://localhost:6379'
       c.redis_url = nil
     end
   end
@@ -36,8 +31,8 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
 
-  # name parameter for /tokens has to be generated every time (since we don't persist tokens) so it's ignored in
-  # cassettes
+  # name parameter for /tokens has to be generated every time (since tokens aren't saved between tests) so it's ignored
+  # in cassettes
   config.default_cassette_options = { match_requests_on: [:method, VCR.request_matchers.uri_without_param(:name)] }
 
   # Filters out the HTTP Basic Auth header from the vcr cassette fixtures -- don't really like that we have to use the

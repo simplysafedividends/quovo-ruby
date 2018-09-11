@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=1bc4920057df6f8a98990b7dc67fb8c0
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 16:13:20 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '210'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=sqGme7DhO5fqLnAKl29X4NR12a6+puH3Aoizl2o5acefkJwMNuoMd2DHGRQYnAyXJcBsidRUXJAM9OZ8h3Jk3s431OfgOPZPPTrhxDvveZYM+cHiAavYxbkFlrFv;
+        Expires=Tue, 18 Sep 2018 16:13:16 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+    body:
+      encoding: UTF-8
+      string: '{"access_token": {"token": "token",
+        "expires": "2018-09-11T17:13:19Z", "name": "1bc4920057df6f8a98990b7dc67fb8c0",
+        "created": "2018-09-11T16:13:22Z"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 16:13:20 GMT
+- request:
+    method: put
+    uri: https://api.quovo.com/v3/accounts/1
+    body:
+      encoding: UTF-8
+      string: '{"type":"bad_type"}'
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer token
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 16:13:20 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=aCAX7IumLDOTh2f47Auw8mu7WegYncO8FVdLsjGhnCYpJUwvzuTVTqSo8P9MlJ1GAUiCOOZQoIJ47Z51loZ2hBy2y8gdWCn8kdMsHKjQjIBqRujSEf3E1JPczAX8;
+        Expires=Tue, 18 Sep 2018 16:13:20 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 400 Bad Request
+      Ratelimit-Limit:
+      - '10000'
+      Ratelimit-Remaining:
+      - '9992'
+      Ratelimit-Reset:
+      - '1536685502'
+    body:
+      encoding: UTF-8
+      string: '{"status": 400, "message": "[type] bad_type is not a valid choice",
+        "id": "bad_request"}'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 16:13:20 GMT
+recorded_with: VCR 4.0.0
