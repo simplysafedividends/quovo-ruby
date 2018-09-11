@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=92e2ddec6c1b3ccf13a8ae3c4ab5687e
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 13:05:25 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '210'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=ACOzEv2A0KIDvH33PQD6LgE1/nVaqrywqpJ42DYYcMpDPIn5+ID4LI7jVof1xvq3pgdMaHXCtkGPbrptHJ/pUGQNnUOWDL03F+xYVb3P0LroQUFcU8z7GVjnX8SJ;
+        Expires=Tue, 18 Sep 2018 13:05:23 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+    body:
+      encoding: UTF-8
+      string: '{"access_token": {"token": "token",
+        "expires": "2018-09-11T14:05:25Z", "name": "92e2ddec6c1b3ccf13a8ae3c4ab5687e",
+        "created": "2018-09-11T13:05:28Z"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 13:05:25 GMT
+- request:
+    method: get
+    uri: https://api.quovo.com/v3/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer token
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 13:05:26 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '988'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=vFrrdo1chXmacG8BbryenDeNhraRykcOCH1JgGR9gJDXh7cq6QQnu9zoMPFNw1D6a1gI3P6K8fqSg2NxAZW6p7iep0YDT8KUxhidN0KsAAESojzs8Ieb6k/xM+vH;
+        Expires=Tue, 18 Sep 2018 13:05:25 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Ratelimit-Limit:
+      - '10000'
+      Ratelimit-Remaining:
+      - '9994'
+      Ratelimit-Reset:
+      - '1536672747'
+    body:
+      encoding: UTF-8
+      string: '{"users": [{"username": "test@example.com", "name": null,
+        "value": -13164.79, "id": 1, "email": "test@example.com"},
+        {"username": "test2@example.com", "name": null, "value": -5577.61,
+        "id": 2, "email": "test2@example.com"}]}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 13:05:26 GMT
+recorded_with: VCR 4.0.0

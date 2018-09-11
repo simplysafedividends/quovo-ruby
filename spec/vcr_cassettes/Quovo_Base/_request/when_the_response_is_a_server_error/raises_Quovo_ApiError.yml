@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=b7826d5eb1241676410521fff8c4524a
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 13:56:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '210'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=SOvtXs5fkJLf5cWJC6pMZRAMgD9Cpp/bGM57LZo0nnRLK1ObO8+Nt1iHMHl0By+lsExpy3kCil0OnLYlbCCw07W1JixZ/W0Etupf5HcN2s6P62fUPCn1k+BF5KXl;
+        Expires=Tue, 18 Sep 2018 13:56:44 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+    body:
+      encoding: UTF-8
+      string: '{"access_token": {"token": "token",
+        "expires": "2018-09-11T14:56:48Z", "name": "b7826d5eb1241676410521fff8c4524a",
+        "created": "2018-09-11T13:56:51Z"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 13:56:49 GMT
+- request:
+    method: get
+    uri: https://api.quovo.com/v3/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer token
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 13:56:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1204'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=tTuBUeMKMYpt7ITh5aN52V1W5SnAmHiQZy4uJbm/egw98SNMixp6Uy7T+5XJV/49CIWrayeRi6K5Ne9ux2A2sEanumQO/o2wpm9gxMazLuWmb/bPI2bGcat4PrID;
+        Expires=Tue, 18 Sep 2018 13:56:49 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Ratelimit-Limit:
+      - '10000'
+      Ratelimit-Remaining:
+      - '9992'
+      Ratelimit-Reset:
+      - '1536676484'
+    body:
+      encoding: UTF-8
+      string: '{"id":"internal_server_error","message":"Internal Server error.","status":500}
+
+      '
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 13:56:52 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=f18cce6a88669b75b3423e72e68a427a
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 13:35:59 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '210'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=JEjInnFOpmZbE/KZSRJFSH4CsouM6v0GGhMclt0ZgEAFnlWySJwsgu+wYw+JD3ARMAK/vfLIct7bSGvuFgsPxmfpbp6nm052xmXjxDo9Pxq2xOK8abFWJNALEOlh;
+        Expires=Tue, 18 Sep 2018 13:35:56 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+    body:
+      encoding: UTF-8
+      string: '{"access_token": {"token": "token",
+        "expires": "2018-09-11T14:35:58Z", "name": "f18cce6a88669b75b3423e72e68a427a",
+        "created": "2018-09-11T13:36:01Z"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 13:35:59 GMT
+- request:
+    method: delete
+    uri: https://api.quovo.com/v3/users/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer token
+  response:
+    status:
+      code: 204
+      message: NO CONTENT
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 13:36:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '5'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=TpIiiLlg5eVDAF9UwwMonMYhLaTUVpqCaSc+c4bPebo3cFv3Ljt5wqS7JKQNGiRFL9FttLhZ02E4x4UCiOcev9or1UUW6aC80oTR4MJBdIUATW9X/ae68KFqkUjw;
+        Expires=Tue, 18 Sep 2018 13:35:59 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 204 No Content
+      Ratelimit-Limit:
+      - '10000'
+      Ratelimit-Remaining:
+      - '9997'
+      Ratelimit-Reset:
+      - '1536676484'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 13:36:04 GMT
+recorded_with: VCR 4.0.0

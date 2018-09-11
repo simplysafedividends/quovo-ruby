@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=984146a8cbbebb4c12a0114460155f6b
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 401
+      message: UNAUTHORIZED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 13:55:36 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '61'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=EQvKr9DrY5vzHUOnM5Z9NSFZAszBzhn5KbUnKgK5qqSuk1DmNU/mww87jMEaKt0cc0zBFRBzCKq/7+jmgX/SjTVtHRcBl8t5fJMNGrT1Pf1di7SkVSlmedAkjxwv;
+        Expires=Tue, 18 Sep 2018 13:55:35 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 401 Unauthorized
+    body:
+      encoding: UTF-8
+      string: '{"id":"unauthorized","message":"Unauthorized.","status":401}
+
+'
+    http_version: 
+  recorded_at: Tue, 11 Sep 2018 13:55:36 GMT
+recorded_with: VCR 4.0.0

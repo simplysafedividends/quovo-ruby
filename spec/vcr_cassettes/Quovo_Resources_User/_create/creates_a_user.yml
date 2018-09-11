@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=d6a45bba70a6647e9563eac8e2bfdd9d
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 13:24:04 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '210'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=2lEmdxD/Q4nFEQ4AWJkvTxRvNiPJNxesWgQE7x0wZdnbs5I6VlO2bUfCKhvEY8Uk12k5NT199sojfgAEylPQQU+p1Ky+RJ8+2G+d5YGcxagQUoflFMUt5WWhu8+N;
+        Expires=Tue, 18 Sep 2018 13:24:02 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+    body:
+      encoding: UTF-8
+      string: '{"access_token": {"token": "token",
+        "expires": "2018-09-11T14:24:03Z", "name": "d6a45bba70a6647e9563eac8e2bfdd9d",
+        "created": "2018-09-11T13:24:06Z"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 13:24:04 GMT
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/users
+    body:
+      encoding: UTF-8
+      string: '{"username":"test@example.com","email":"test@example.com","name":"Test
+        Example"}'
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer token
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 13:24:10 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=MzALLJPyq7cWkHhEs0Fv+8uHk4U6YJit8qHCxHrkNq3Zfj+9H4/71jVPxzSBVY/00n5xbSVQcwhSNYW3JxEALFCV+KNk+cRQDGx+R26rVqqEnl6tiCkwVfL62I73;
+        Expires=Tue, 18 Sep 2018 13:24:04 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+      Ratelimit-Limit:
+      - '10000'
+      Ratelimit-Remaining:
+      - '9990'
+      Ratelimit-Reset:
+      - '1536672747'
+    body:
+      encoding: UTF-8
+      string: '{"user": {"username": "test@example.com", "name": "Test Example", "value":
+        null, "id": 1, "email": "test@example.com"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 13:24:10 GMT
+recorded_with: VCR 4.0.0

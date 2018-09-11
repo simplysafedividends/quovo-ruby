@@ -20,7 +20,7 @@ module Quovo
   extend Quovo::Config
 
   class ApiError < StandardError; end
-  class TokenRefreshError < StandardError; end
+  class UnauthorizedError < StandardError; end
 
   class << self
     def accounts

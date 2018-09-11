@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.quovo.com/v3/tokens?name=f19833f1303859c9e9802b2a87182b6b
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - "<HTTP_BASIC_AUTH_HEADER>"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 13:12:51 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '210'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=8Qdzoqa7l13FoCOynrwfR0wlonvsSZWzM5XYEVGOMECZKs7kFvPgBOgkWTV0eQrtpFRotAkd1Z09t8BXP3UddwNQYk+NIAtOezgT0WDa6b44EFWMe74FL6F9CCud;
+        Expires=Tue, 18 Sep 2018 13:12:50 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 201 Created
+    body:
+      encoding: UTF-8
+      string: '{"access_token": {"token": "token",
+        "expires": "2018-09-11T14:12:50Z", "name": "f19833f1303859c9e9802b2a87182b6b",
+        "created": "2018-09-11T13:12:53Z"}}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 13:12:51 GMT
+- request:
+    method: get
+    uri: https://api.quovo.com/v3/users?username=test@example.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer token
+  response:
+    status:
+      code: 404
+      message: NOT FOUND
+    headers:
+      Date:
+      - Tue, 11 Sep 2018 13:12:51 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '55'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - AWSALB=HGVJ0Ypt8D9UX7NaZqeHOsIg3VJno0fySqFT9jw/QrmlsTlVOrS+qFuVS3B60DEonCn9u8XMrYxSyYHi2i5o4DP/cgubvaHN6pnssIUkvBlyaFKepN5WKHpSkJrJ;
+        Expires=Tue, 18 Sep 2018 13:12:51 GMT; Path=/
+      Server:
+      - nginx
+      Status:
+      - 404 Not Found
+      Ratelimit-Limit:
+      - '10000'
+      Ratelimit-Remaining:
+      - '9991'
+      Ratelimit-Reset:
+      - '1536672747'
+    body:
+      encoding: UTF-8
+      string: '{"id":"not_found","message":"Not found.","status":404}
+
+'
+    http_version:
+  recorded_at: Tue, 11 Sep 2018 13:12:52 GMT
+recorded_with: VCR 4.0.0

@@ -3,7 +3,7 @@
 require 'httparty'
 
 require 'quovo/config'
-# require 'quovo/token'
+
 module Quovo
   class Base
     include HTTParty
@@ -33,15 +33,18 @@ module Quovo
 
       protected
 
+      #
+      #
+      #
       def fetch(method, path, options = {})
-        request_options = { headers: get_auth_header(path) }
+        request_options = get_auth_header(path)
+
         request_options[:body] = options[:body].to_json if options.key?(:body)
         request_options[:headers]['Content-Type'] = 'application/json' if request_options.key?(:body)
         request_options[:debug_output] = $stdout if Quovo.config.verbose
 
         response = send(method, path, request_options)
-
-        raise Quovo::ApiError, response.body if !response.success?
+        raise_errors_if_needed(response)
 
         body =
           if response.body.blank?
@@ -58,14 +61,30 @@ module Quovo
         )
       end
 
+      #
+      #
+      #
+      #
       def get_auth_header(path)
-        path =~ BASIC_AUTH_PATHS ? basic_auth_header : jwt_auth_header
+        if path =~ BASIC_AUTH_PATHS
+          # HTTParty-specific config for basic auth
+          {
+            basic_auth: {
+              username: Quovo.config.username,
+              password: Quovo.config.password
+            }
+          }
+        else
+          { headers: jwt_auth_header }
+        end
       end
 
-      # TODO try https://github.com/jnunemaker/httparty/blob/master/examples/delicious.rb
-      def basic_auth_header
-        base64 = Base64.encode64("#{Quovo.config.username}:#{Quovo.config.password}").gsub("\n", '')
-        { Authorization: "Basic #{base64}" }
+      #
+      #
+      #
+      def raise_errors_if_needed(response)
+        raise Quovo::ApiError, response.body if response.server_error?
+        raise Quovo::UnauthorizedError, response.body if response.unauthorized?
       end
     end
   end

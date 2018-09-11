@@ -11,7 +11,6 @@ Gem::Specification.new do |spec|
   spec.email         = ['singjsong@gmail.com']
 
   spec.summary       = "Ruby wrapper for Quovo's v3 API"
-  # spec.description   = %q{TODO: Write a longer description or delete this line.}
   spec.homepage      = 'https://github.com/studentloanbenefits/quovo-ruby'
   spec.license       = 'MIT'
 
@@ -37,6 +36,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'byebug', '10.0.2'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'vcr', '~> 4.0', '>= 4.0.0'
+  spec.add_development_dependency 'fakeredis', '~> 0.7.0'
+  spec.add_development_dependency 'webmock', '~> 3.4', '>= 3.4.2'
 
   spec.add_runtime_dependency 'activesupport', '~> 5.2.0', '>= 5.2.0'
   spec.add_runtime_dependency 'httparty', '~> 0.16.2'

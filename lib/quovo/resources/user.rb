@@ -10,7 +10,8 @@ module Quovo
         # @option username [String]
         # @return [OpenStruct]
         def all(params = {})
-          params.present? ? request(:get, '/users', body: params) : request(:get, '/users')
+          query_params = "?username=#{params[:username]}" if params.present?
+          request(:get, "/users#{query_params}")
         end
 
         # Creates a user.
@@ -20,6 +21,8 @@ module Quovo
         # @param name [String]
         # # @return [OpenStruct]
         def create(username: , email: nil, name: nil)
+          # As of 2018-09-11 Quovo's api allows one to create a user with a null username, so we're just taking
+          # preventative measures
           params = { username: username }
           params[:email] = email if email
           params[:name] = name if name

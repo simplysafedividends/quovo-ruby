@@ -1,5 +1,22 @@
 # Ruby wrapper for Quovo's v3 API (WIP)
 
+## Progress
+* `/accounts`
+  - Works? Yes
+  - Tests? No
+* `/connections`
+  - Works? Yes
+  - Tests? No
+* `/transactions`
+  - Works? Yes
+  - Tests? No
+* `/users`
+  - Works? Yes
+  - Tests? Yes
+
+Endpoints used in Quovo's Connect UI widget (`/auth`, `/challenges`, etc.) may not come any time soon, so if you want
+ them, fork and open up a PR for them.
+
 ## Requirements
 ### ruby 2.5.1
 Developed on 2.5.1, will probably work on anything 2.3 and above.
@@ -51,7 +68,7 @@ Quovo.users.all
 Quovo.users.create(username: 'test_username', name: 'John Doe', email: 'test@example.com')
 Quovo.users.find(1)
 Quovo.users.destroy(1)
-Quovo.users.update(1, email: 'new_email@example.com' name: 'John Smith')
+Quovo.users.update(1, email: 'new_email@example.com', name: 'John Smith')
 ```
 ### Accounts
 ```ruby
@@ -62,15 +79,6 @@ Quovo.accounts.for_user(2)
 Quovo.accounts.for_connection(3)
 Quovo.accounts.update(1, {???})
 ```
-
-## Working Endpoints
-* `/accounts`
-* `/connections`
-* `/transactions`
-* `/users`
-
-Above endpoints still need fixture tests. Endpoints used in Quovo's Connect UI widget (`/auth`, `/challenges`, etc.) 
-may not come any time soon, so if you want them, fork and open up a PR for them.
 
 ## Development
 
