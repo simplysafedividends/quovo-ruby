@@ -52,10 +52,10 @@ Quovo.configure do |config|
   config.password = ''
   
   # Outputs verbose HTTParty logging to stdout
-  c.verbose = true
+  config.verbose = true
   
   # redis url for storing JWT
-  c.redis_url = 'redis://localhost:6379'
+  config.redis_url = 'redis://localhost:6379'
 end
 ````
 
