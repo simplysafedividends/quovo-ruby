@@ -4,7 +4,7 @@ PATH
     quovo-ruby (0.1.0)
       activesupport (~> 5.2.0, >= 5.2.0)
       httparty (~> 0.16.2)
-      redis (~> 3.3, >= 3.3.1)
+      redis (>= 3.3.1)
 
 GEM
   remote: https://rubygems.org/

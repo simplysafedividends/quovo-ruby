@@ -5,7 +5,7 @@ module Quovo
       # Retrieve token, refresh if needed.
       def get
         refresh if token_expired?
-        redis['quovo-token']
+        redis.get('quovo-token')
       end
 
       # Fetches a new token from the API and stores it locally in redis.
@@ -14,14 +14,14 @@ module Quovo
         response = request(:post, "/tokens?name=#{SecureRandom.hex}")
 
         # Default token returned from API expires in an hour
-        redis['quovo-token-expires-at'] = 60.minutes.from_now
-        redis['quovo-token'] = response.body.dig(:access_token, :token)
+        redis.set('quovo-token-expires-at', 60.minutes.from_now)
+        redis.set('quovo-token', response.body.dig(:access_token, :token))
       end
 
       protected
 
       def token_expired?
-        !(redis['quovo-token-expires-at'].present? && Time.parse(redis['quovo-token-expires-at']).future?)
+        !(redis.get('quovo-token-expires-at').present? && Time.parse(redis.get('quovo-token-expires-at')).future?)
       end
 
       def redis
