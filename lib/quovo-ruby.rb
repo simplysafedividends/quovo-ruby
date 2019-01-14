@@ -14,6 +14,7 @@ require 'quovo/resources/base'
 require 'quovo/resources/account'
 require 'quovo/resources/connection'
 require 'quovo/resources/transaction'
+require 'quovo/resources/ui_token'
 require 'quovo/resources/user'
 
 module Quovo
@@ -33,6 +34,10 @@ module Quovo
 
     def transactions
       Quovo::Resources::Transaction
+    end
+
+    def ui_tokens
+      Quovo::Resources::UiToken
     end
 
     def users
