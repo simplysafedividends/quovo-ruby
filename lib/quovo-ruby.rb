@@ -13,6 +13,7 @@ require 'quovo/version'
 require 'quovo/resources/base'
 require 'quovo/resources/account'
 require 'quovo/resources/connection'
+require 'quovo/resources/holding'
 require 'quovo/resources/transaction'
 require 'quovo/resources/ui_token'
 require 'quovo/resources/user'
@@ -30,6 +31,10 @@ module Quovo
 
     def connections
       Quovo::Resources::Connection
+    end
+
+    def holdings
+      Quovo::Resources::Holding
     end
 
     def transactions
