@@ -15,6 +15,7 @@ require 'quovo/resources/account'
 require 'quovo/resources/connection'
 require 'quovo/resources/holding'
 require 'quovo/resources/institution'
+require 'quovo/resources/sync'
 require 'quovo/resources/transaction'
 require 'quovo/resources/ui_token'
 require 'quovo/resources/user'
@@ -40,6 +41,10 @@ module Quovo
 
     def institutions
       Quovo::Resources::Institution
+    end
+
+    def sync
+      Quovo::Resources::Sync
     end
 
     def transactions
