@@ -24,6 +24,13 @@ module Quovo
         def for_user(user_id)
           request(:get, "/users/#{user_id}/connections")
         end
+
+        # Destroys connection.
+        #
+        # @param id [String]
+        def destroy(id)
+          request(:delete, "/connections/#{id}")
+        end
       end
     end
   end
