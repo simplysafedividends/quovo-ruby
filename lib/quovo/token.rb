@@ -14,7 +14,7 @@ module Quovo
         response = request(:post, "/tokens?name=#{SecureRandom.hex}")
 
         # Default token returned from API expires in an hour
-        redis.set('quovo-token-expires-at', 60.minutes.from_now)
+        redis.set('quovo-token-expires-at', 59.minutes.from_now)
         redis.set('quovo-token', response.body.dig(:access_token, :token))
       end
 
