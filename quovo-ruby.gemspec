@@ -40,7 +40,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'fakeredis', '~> 0.7.0'
   spec.add_development_dependency 'webmock', '~> 3.4', '>= 3.4.2'
 
-  spec.add_runtime_dependency 'activesupport', '~> 5.2.0', '>= 5.2.0'
+  spec.add_runtime_dependency 'activesupport', '>= 5.2.0'
   spec.add_runtime_dependency 'httparty', '~> 0.16.2'
   spec.add_runtime_dependency 'redis', '>= 3.3.1'
 end
