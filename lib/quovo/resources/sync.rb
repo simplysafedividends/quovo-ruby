@@ -9,6 +9,10 @@ module Quovo
         def for_connection(connection_id)
           request(:get, "/connections/#{connection_id}/sync")
         end
+
+        def create(connection_id:)
+          request(:post, "/connections/#{connection_id}/sync")
+        end
       end
     end
   end
